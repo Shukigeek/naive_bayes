@@ -1,11 +1,12 @@
 import streamlit as st
 import requests
-from fetch_model_data.fetch_options import GetOptions
+from prediction.fetch_model_data.fetch_options import GetOptions
 
-URL_PREDICT = "http://127.0.0.1:8001/prediction"
+URL_PREDICT = "http://127.0.0.1:8000/prediction"
 
 
 features_info = GetOptions().options
+
 def predict_single_row(features_info):
     st.subheader("Enter values for each feature:")
     user_input = {}
@@ -20,7 +21,8 @@ def predict_single_row(features_info):
             st.success(f"✅ Prediction result: {prediction}")
         else:
             st.error("❌ Failed to send request to the prediction server.")
-
+            st.text(f"Status code: {res.status_code}")
+            st.text(res.text)
 
 
 st.set_page_config(page_title="Prediction App", layout="centered", page_icon="🤖")
