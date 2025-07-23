@@ -1,8 +1,8 @@
-from data_loader import DataLoader
-from cleaner import Clean
-from builder import Model
-from split_data import split_dataframe
-from validetor import Evaluation
+from model.data_loader import DataLoader
+from model.cleaner import Clean
+from model.builder import Model
+from model.split_data import split_dataframe
+from model.validetor import Evaluation
 
 class ModelManager:
     def __init__(self, file: str, label: str):
