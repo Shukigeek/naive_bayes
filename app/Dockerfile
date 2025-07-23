@@ -2,7 +2,7 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-COPY . /app
+COPY app/model /app
 
 
 RUN pip install -r requirements.txt
