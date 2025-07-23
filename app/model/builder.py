@@ -32,7 +32,7 @@ class Model:
     def _get_labels(self):
         labels = self.df[self.classified].unique()
         logging.info(f"Identified labels: {labels}")
-        return labels
+        return labels.tolist()
     def get_class_prob(self):
         class_count = self.df[self.classified].value_counts()
         total = len(self.df)

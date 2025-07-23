@@ -1,7 +1,7 @@
 import requests
 
 class GetModel:
-    def __init__(self, url="http://127.0.0.1:8000/trained_model"):
+    def __init__(self, url="http://model:8000/trained_model"):
         self.trained_model = None
         self.class_prob = None
         self.labels = None
